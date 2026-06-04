@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elegant Nails & Spa | Custom Nail Art in Bay Shore, NY</title>
+  <meta name="description" content="Elegant Nails & Spa in Bay Shore, Long Island. Custom nail art, manicures, pedicures, acrylic full sets, fill-ins, and event nails. Call to book.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    :root {
+      --ink: #211820;
+      --muted: #735f6d;
+      --blush: #fbedf2;
+      --shell: #fff8f6;
+      --pearl: #fffefd;
+      --rose: #c34974;
+      --berry: #8c1f50;
+      --chrome: #d8c7ff;
+      --line: rgba(33, 24, 32, 0.12);
+      --shadow: 0 18px 60px rgba(140, 31, 80, 0.14);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 88% 8%, rgba(216, 199, 255, 0.45), transparent 28rem),
+        linear-gradient(180deg, var(--shell), var(--pearl) 42%, var(--blush));
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 248, 246, 0.9);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      color: var(--berry);
+      border: 1px solid rgba(195, 73, 116, 0.32);
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fff, #fae2ea);
+      box-shadow: 0 8px 22px rgba(195, 73, 116, 0.18);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: var(--ink);
+      color: white;
+      font-weight: 800;
+      box-shadow: 0 12px 28px rgba(33, 24, 32, 0.18);
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .button:hover { transform: translateY(-1px); box-shadow: 0 16px 34px rgba(33, 24, 32, 0.24); }
+    .button.secondary {
+      background: white;
+      color: var(--berry);
+      border-color: rgba(195, 73, 116, 0.24);
+      box-shadow: none;
+    }
+
+    .hero {
+      padding: 56px 0 30px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 14px;
+      padding: 7px 12px;
+      border: 1px solid rgba(195, 73, 116, 0.22);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.68);
+      color: var(--berry);
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.02;
+      font-family: "Playfair Display", Georgia, serif;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(3rem, 11vw, 6.7rem);
+      letter-spacing: -0.04em;
+    }
+
+    h2 {
+      font-size: clamp(2.15rem, 8vw, 4.1rem);
+      letter-spacing: -0.035em;
+    }
+
+    h3 {
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      max-width: 660px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.4vw, 1.24rem);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .booking-note {
+      max-width: 570px;
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .hero-art {
+      min-height: 430px;
+      padding: 14px;
+      border: 1px solid rgba(33, 24, 32, 0.1);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.78), rgba(255,255,255,0.38)),
+        radial-gradient(circle at 72% 18%, rgba(216, 199, 255, 0.85), transparent 13rem),
+        linear-gradient(135deg, #ffe1ea, #fffaf8);
+      box-shadow: var(--shadow);
+    }
+
+    .design-board {
+      height: 100%;
+      min-height: 400px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .nail-tile {
+      position: relative;
+      overflow: hidden;
+      min-height: 184px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.78)),
+        var(--tile);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .nail-tile:before {
+      content: "";
+      position: absolute;
+      width: 58px;
+      height: 130px;
+      left: calc(50% - 29px);
+      top: calc(50% - 65px);
+      border-radius: 36px 36px 28px 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.3));
+      border: 1px solid rgba(255,255,255,0.8);
+      box-shadow: inset 0 -22px 32px rgba(195, 73, 116, 0.14), 0 14px 30px rgba(33,24,32,0.12);
+      transform: rotate(var(--turn));
+    }
+
+    .nail-tile span {
+      position: absolute;
+      left: 12px;
+      bottom: 10px;
+      right: 12px;
+      color: rgba(33, 24, 32, 0.82);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.76);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .stars { color: #d58a18; }
+    section { padding: 54px 0; }
+
+    .trust {
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.62);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .trust-item {
+      padding: 16px;
+      border-left: 3px solid var(--rose);
+      background: rgba(255,255,255,0.68);
+      border-radius: var(--radius);
+    }
+
+    .trust-item strong { display: block; font-size: 1.08rem; }
+    .trust-item span { color: var(--muted); font-size: 0.92rem; }
+
+    .section-head {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .section-head p {
+      max-width: 700px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .service-grid { grid-template-columns: 1fr; }
+
+    .card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 10px 30px rgba(140, 31, 80, 0.06);
+    }
+
+    .card i {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      color: var(--berry);
+      background: #fae5ec;
+    }
+
+    .card p { margin: 9px 0 0; color: var(--muted); }
+
+    .price-note {
+      margin-top: 16px;
+      padding: 15px 16px;
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: white;
+      font-weight: 700;
+    }
+
+    .artist-grid { grid-template-columns: 1fr; }
+    .artist-card {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .photo-placeholder {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(216,199,255,0.8), rgba(250,229,236,0.9)),
+        #fae5ec;
+      color: var(--berry);
+      font-size: 0.72rem;
+      font-weight: 900;
+      text-align: center;
+      letter-spacing: 0.08em;
+    }
+
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-tile {
+      min-height: 160px;
+      display: flex;
+      align-items: end;
+      padding: 14px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.72);
+      background:
+        linear-gradient(180deg, transparent, rgba(33, 24, 32, 0.65)),
+        linear-gradient(135deg, var(--a), var(--b));
+      color: white;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+
+    .caption { margin: 12px 0 0; color: var(--muted); }
+
+    .quote-grid { grid-template-columns: 1fr; }
+    blockquote {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    cite {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .location-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .map-placeholder {
+      min-height: 300px;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      border: 1px dashed rgba(140,31,80,0.38);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0.42)),
+        repeating-linear-gradient(45deg, rgba(195,73,116,0.08), rgba(195,73,116,0.08) 10px, rgba(216,199,255,0.12) 10px, rgba(216,199,255,0.12) 20px);
+      color: var(--berry);
+      text-align: center;
+      font-weight: 900;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 12px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .info-list li {
+      display: flex;
+      gap: 10px;
+      color: var(--muted);
+    }
+
+    .info-list i {
+      width: 20px;
+      margin-top: 4px;
+      color: var(--berry);
+    }
+
+    footer {
+      padding: 34px 0;
+      background: var(--ink);
+      color: white;
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 20px;
+      align-items: center;
+    }
+
+    footer p { margin: 8px 0 0; color: rgba(255,255,255,0.72); }
+    footer .button { background: white; color: var(--ink); box-shadow: none; }
+    footer .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: rgba(255,255,255,0.78);
+      font-weight: 700;
+    }
+
+    @media (min-width: 720px) {
+      .hero { padding: 78px 0 44px; }
+      .hero-grid { grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.72fr); }
+      .trust-grid { grid-template-columns: repeat(4, 1fr); }
+      .service-grid { grid-template-columns: repeat(3, 1fr); }
+      .artist-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+      .quote-grid { grid-template-columns: repeat(2, 1fr); }
+      .location-grid { grid-template-columns: 1.05fr 0.95fr; }
+      .footer-grid { grid-template-columns: 1fr auto; }
+    }
+
+    @media (max-width: 420px) {
+      .nav { min-height: 64px; }
+      .brand span { max-width: 150px; }
+      .nav .button { padding: 0 13px; }
+      .hero-art { min-height: auto; }
+      .design-board { min-height: 320px; }
+      .nail-tile { min-height: 148px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Elegant Nails & Spa home">
+        <span class="brand-mark"><i class="fa-solid fa-sparkles"></i></span>
+        <span>Elegant Nails & Spa</span>
+      </a>
+      <a class="button" href="tel:+16319513922"><i class="fa-solid fa-phone"></i> Call</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow"><i class="fa-solid fa-star stars"></i> 4.9 stars from 443 Google reviews</p>
+          <h1>Bring the design. We'll bring it to life.</h1>
+          <p class="lead">Bay Shore's design-forward nail salon for custom sets, precise detail work, pedicures, fill-ins, and birthday or event nails. Ask for Tiffany or book with the full Elegant Nails & Spa artist team.</p>
+          <div class="actions">
+            <a class="button" href="tel:+16319513922"><i class="fa-solid fa-phone"></i> Call +1 631-951-3922</a>
+            <a class="button secondary" href="#instagram"><i class="fa-brands fa-instagram"></i> DM on Instagram</a>
+          </div>
+          <p class="booking-note">Primary CTA is call-to-book today. If you stand up a booking system later, swap the primary CTA to that link.</p>
+          <div class="badge-row" aria-label="Highlights">
+            <span class="badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Custom nail art</span>
+            <span class="badge"><i class="fa-solid fa-location-dot"></i> Bay Shore, Long Island</span>
+            <span class="badge"><i class="fa-solid fa-user-check"></i> Tiffany requested by name</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Stylized custom nail design preview">
+          <div class="design-board">
+            <div class="nail-tile" style="--tile:#ffdbe6;--turn:-10deg;"><span>Chrome</span></div>
+            <div class="nail-tile" style="--tile:#e4d9ff;--turn:8deg;"><span>3D Details</span></div>
+            <div class="nail-tile" style="--tile:#fff0c7;--turn:7deg;"><span>Floral French</span></div>
+            <div class="nail-tile" style="--tile:#f7a6c7;--turn:-7deg;"><span>Birthday Set</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust">
+      <div class="wrap trust-grid">
+        <div class="trust-item"><strong>4.9 stars</strong><span>Google rating</span></div>
+        <div class="trust-item"><strong>443 reviews</strong><span>Local proof</span></div>
+        <div class="trust-item"><strong>Bay Shore</strong><span>North Bay Shore, Long Island</span></div>
+        <div class="trust-item"><strong>Tiffany + team</strong><span>Featuring a full team of nail artists</span></div>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Services clients come back for.</h2>
+          <p>From clean everyday manicures to detailed art sets, the team is known for taking their time, matching the inspiration, and adjusting the design on the spot.</p>
+        </div>
+        <div class="grid service-grid">
+          <article class="card"><i class="fa-solid fa-hand-sparkles"></i><h3>Manicures</h3><p>Fresh, polished nail care with detail-focused finishing.</p></article>
+          <article class="card"><i class="fa-solid fa-gem"></i><h3>Gel manicures</h3><p>Glossy color, longer wear, and a clean finish.</p></article>
+          <article class="card"><i class="fa-solid fa-ruler-combined"></i><h3>Acrylic full sets</h3><p>Shape, length, and style built around the look you want.</p></article>
+          <article class="card"><i class="fa-solid fa-spa"></i><h3>Pedicures</h3><p>Relaxed foot care, including pedis customers call out by name.</p></article>
+          <article class="card"><i class="fa-solid fa-palette"></i><h3>Custom nail art & designs</h3><p>Chrome, floral French, detailed trends, 3D accents, and design recreations.</p></article>
+          <article class="card"><i class="fa-solid fa-cake-candles"></i><h3>Birthday/event nails</h3><p>Statement sets for birthdays, trips, parties, and special moments.</p></article>
+          <article class="card"><i class="fa-solid fa-rotate-right"></i><h3>Fill-ins</h3><p>Refresh your set and keep the shape, color, and design looking intentional.</p></article>
+        </div>
+        <div class="price-note">$40-$140 depending on service. [CONFIRM PRICING]</div>
+      </div>
+    </section>
+
+    <section id="artists">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Meet the artists clients ask for.</h2>
+          <p>Reviews repeatedly mention the team by name, especially for precision, comfort, and custom design work.</p>
+        </div>
+        <div class="grid artist-grid">
+          <article class="card artist-card"><div class="photo-placeholder">[ADD PHOTO]</div><div><h3>Tiffany</h3><p>Most-requested artist, precise, detailed, and known for custom nail designs.</p></div></article>
+          <article class="card artist-card"><div class="photo-placeholder">[ADD PHOTO]</div><div><h3>Angelica</h3><p>Friendly artist clients mention as part of the welcoming team.</p></div></article>
+          <article class="card artist-card"><div class="photo-placeholder">[ADD PHOTO]</div><div><h3>Steph</h3><p>Part of the trusted artist team customers return to by name.</p></div></article>
+          <article class="card artist-card"><div class="photo-placeholder">[ADD PHOTO]</div><div><h3>Amanda</h3><p>Known in reviews among the artists who make clients feel comfortable.</p></div></article>
+          <article class="card artist-card"><div class="photo-placeholder">[ADD PHOTO]</div><div><h3>Jenny</h3><p>A named artist in a salon clients describe as skilled and detail-oriented.</p></div></article>
+          <article class="card artist-card"><div class="photo-placeholder">[ADD PHOTO]</div><div><h3>Fernanda</h3><p>Called out for pedis and caring service.</p></div></article>
+          <article class="card artist-card"><div class="photo-placeholder">[ADD PHOTO]</div><div><h3>Liz</h3><p>Named in reviews as part of the creative, reliable artist team.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="instagram">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Make the gallery the sales pitch.</h2>
+          <p>Pull recent chrome, 3D, floral French, birthday, and trend sets from Instagram so new clients can point to the exact look they want.</p>
+        </div>
+        <div class="grid gallery-grid">
+          <div class="gallery-tile" style="--a:#f5a3c0;--b:#e9dcff;">[ADD PHOTO] Chrome set</div>
+          <div class="gallery-tile" style="--a:#ffe4ef;--b:#ad6ea0;">[ADD PHOTO] 3D details</div>
+          <div class="gallery-tile" style="--a:#f8d6a6;--b:#f29bbb;">[ADD PHOTO] Birthday nails</div>
+          <div class="gallery-tile" style="--a:#d9f2ef;--b:#c34974;">[ADD PHOTO] Floral French</div>
+          <div class="gallery-tile" style="--a:#e6d7ff;--b:#8c1f50;">[ADD PHOTO] Trend design</div>
+          <div class="gallery-tile" style="--a:#fff0c7;--b:#d58a18;">[ADD PHOTO] Custom art</div>
+        </div>
+        <p class="caption">Use their Instagram gallery here. Instagram handle: [CONFIRM HANDLE]</p>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>What clients already say.</h2>
+          <p>Short review snippets keep the page grounded in the salon's real reputation.</p>
+        </div>
+        <div class="grid quote-grid">
+          <article class="card"><blockquote>"They can recreate any nail style I ask for."</blockquote><cite>Client review</cite></article>
+          <article class="card"><blockquote>"The best nail salon I've ever been to."</blockquote><cite>Client review</cite></article>
+          <article class="card"><blockquote>"Tiffany is very precise and detailed."</blockquote><cite>Client review</cite></article>
+          <article class="card"><blockquote>"Show them the wildest design, they never flinch."</blockquote><cite>Client review</cite></article>
+          <article class="card"><blockquote>"I never go anywhere else."</blockquote><cite>Client review</cite></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="location">
+      <div class="wrap location-grid">
+        <div>
+          <div class="section-head">
+            <h2>Visit Elegant Nails & Spa.</h2>
+            <p>Call ahead to book your artist, confirm availability, and ask about detailed custom designs before your appointment.</p>
+          </div>
+          <ul class="info-list">
+            <li><i class="fa-solid fa-phone"></i><span><strong>Phone:</strong> <a href="tel:+16319513922">+1 631-951-3922</a></span></li>
+            <li><i class="fa-solid fa-location-dot"></i><span><strong>Address:</strong> 1831 5th Ave, Bay Shore, NY 11706</span></li>
+            <li><i class="fa-solid fa-clock"></i><span><strong>Hours:</strong> Tue-Sat 10AM-7PM, Sun 10AM-5PM, Mon closed. [CONFIRM FULL HOURS]</span></li>
+            <li><i class="fa-brands fa-instagram"></i><span><strong>Instagram:</strong> [CONFIRM HANDLE]</span></li>
+          </ul>
+        </div>
+        <div class="map-placeholder">[EMBED GOOGLE MAP]<br>1831 5th Ave, Bay Shore, NY 11706</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <h3>Elegant Nails & Spa</h3>
+        <p>1831 5th Ave, Bay Shore, NY 11706</p>
+        <p>Tue-Sat 10AM-7PM, Sun 10AM-5PM, Mon closed. [CONFIRM FULL HOURS]</p>
+        <div class="links" aria-label="Footer links">
+          <a href="tel:+16319513922">+1 631-951-3922</a>
+          <a href="#instagram">Instagram [CONFIRM HANDLE]</a>
+        </div>
+      </div>
+      <a class="button" href="tel:+16319513922"><i class="fa-solid fa-phone"></i> Call to book</a>
+    </div>
+  </footer>
+</body>
+</html>
